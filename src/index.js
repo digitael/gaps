@@ -1,5 +1,9 @@
 import 'angular';
 import 'angular-material';
 
-import './assets/scss/app.scss';
 import './app';
+import './assets/scss/app.scss';
+
+import './services/data'
+
+

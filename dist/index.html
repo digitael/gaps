@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CloudSight</title>
+</head>
+
+<body ng-app="CloudSight" layout="column" ng-cloak>
+    <div layout="row" layout-padding ng-controller="sidenavCtrl">
+        <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="sideToggle">
+            Left navigation pane
+            <md-button ng-click="closeLeftMenu()">
+                Close Left Menu
+            </md-button>
+        </md-sidenav>
+
+        <md-content layout-fill>
+            <md-button ng-click="openLeftMenu()">
+                Open Left Menu
+            </md-button>
+            <operators></operators>
+        </md-content>
+    </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+
+</html>

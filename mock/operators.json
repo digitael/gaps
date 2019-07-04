@@ -1,0 +1,30 @@
+[
+    {
+        "name": "KPN",
+        "network": true,
+        "voice": true,
+        "catv": false,
+        "data": true
+    },
+    {
+        "name": "IOPSYS",
+        "network": true,
+        "voice": false,
+        "catv": true,
+        "data": false
+    },
+    {
+        "name": "CHRIS-TEL",
+        "network": true,
+        "voice": true,
+        "catv": false,
+        "data": true
+    },{
+        "name": "ROEL-COM",
+        "network": false,
+        "voice": true,
+        "catv": false,
+        "data": false
+    }
+
+]
