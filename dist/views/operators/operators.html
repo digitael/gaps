@@ -23,36 +23,10 @@
     </md-list>
 </div>
 
-<h2>Add new operator</h2>
-<div layout="row" flex="100" flex>
-    <md-list flex="50">
-        <md-list-item>
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Operator name</label>
-                <input ng-model="user.firstName">
-            </md-input-container>
-        </md-list-item>
-        <md-list-item>
-            <p>Network Operator</p>
-            <md-switch class="md-primary"></md-switch>
-        </md-list-item>
+<md-button class="md-raised md-primary" href="#/operators/add">
+    Add new operator
+</md-button>
 
-        <md-list-item>
-            <p>Voice Operator</p>
-            <md-switch class="md-primary"></md-switch>
-        </md-list-item>
-
-        <md-list-item>
-            <p>CATV Operator</p>
-            <md-switch class="md-primary"></md-switch>
-        </md-list-item>
-
-        <md-list-item>
-            <p>Data Operator</p>
-            <md-switch class="md-primary"></md-switch>
-        </md-list-item>
-    </md-list>
-
-</div>
-<md-button class="md-raised md-primary">Submit</md-button>
-<md-button class="md-raised md-primary">Reset values</md-button>
+<md-button class="md-raised md-warn" ng-click="getOperators()">
+    Refresh list
+</md-button>

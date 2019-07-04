@@ -1,0 +1,24 @@
+<div layout="row" layout-padding style="background-color:green;color:white;">
+    <h1>Groups view</h1>
+</div>
+
+<div layout="row" flex="100" flex ng-controller="operatorCtrl">
+    <md-list flex style="text-align:center;">
+        <md-list-item style="background-color:#f0f0f0">
+            <div layout="column" flex="20" class="md-title">Group name</div>
+            <div layout="column" flex="20" class="md-title">Network Operator</div>
+            <div layout="column" flex="20" class="md-title">Voice Operator</div>
+            <div layout="column" flex="20" class="md-title">CATV Operator</div>
+            <div layout="column" flex="20" class="md-title">Data Operator</div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-repeat="operator in operators">
+            <div layout="column" flex="20"><strong>{{ operator.name }}</strong></div>
+            <div layout="column" flex="20">{{ operator.network }}</div>
+            <div layout="column" flex="20">{{ operator.voice }}</div>
+            <div layout="column" flex="20">{{ operator.catv }}</div>
+            <div layout="column" flex="20">{{ operator.data }}</div>
+        </md-list-item>
+        <md-divider></md-divider>
+    </md-list>
+</div>

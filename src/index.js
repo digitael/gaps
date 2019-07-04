@@ -1,4 +1,5 @@
 import 'angular';
+import 'angular-route'
 import 'angular-material';
 
 import './app';

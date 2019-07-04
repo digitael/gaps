@@ -1,17 +1,15 @@
 const express = require('express'),
   app = express(),
-  router = express.Router(),
+  router = require('./src/api'),
   webpack = require('webpack'),
   webpackDevMiddleware = require('webpack-dev-middleware'),
 
   config = require('./webpack.config.js'),
   compiler = webpack(config);
 
-let operators = require('./mock/operators.json');
+  require('./src/database');
+  require('./src/seed');
 
-router.get('/operators', function(req,res){
-  res.json(operators);
-})
 app
   .use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath

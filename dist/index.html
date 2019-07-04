@@ -12,18 +12,26 @@
     <div layout="row" layout-padding ng-controller="sidenavCtrl">
         <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="sideToggle">
             Left navigation pane
-            <md-button ng-click="closeLeftMenu()">
-                Close Left Menu
+            <md-button ng-click="closeLeftMenu()" class="md-raised md-warn">
+                &lt; Close Menu
+            </md-button>
+            <md-button href='#operators' class="md-raised">
+                Operators
+            </md-button>
+            <md-button href="#users" class="md-raised">
+                Users
+            </md-button>
+            <md-button href="#groups" class="md-raised">
+                Groups
             </md-button>
         </md-sidenav>
+        <md-button ng-click="openLeftMenu()" ng-hide="isOpenLeft()" class="md-raised md-warn">
+            Open Menu &gt;
+        </md-button>
 
-        <md-content layout-fill>
-            <md-button ng-click="openLeftMenu()">
-                Open Left Menu
-            </md-button>
-            <operators></operators>
+        <md-content layout-fill ng-view>
+            test
         </md-content>
-    </div>
     </div>
     <script src="bundle.js"></script>
 </body>
