@@ -27,7 +27,7 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
     .controller('operatorCtrl', function ($scope, dataService) {
         dataService.getOperators(function (response) {
             let operators = response.data;
-            $scope.operators = operators;
+            $scope.operators = operators.operators;
         })
     })
     .controller('sidenavCtrl', function ($scope, $mdSidenav) {
