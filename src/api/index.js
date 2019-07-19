@@ -7,12 +7,26 @@ let Operators = require('../models/operators');
 // let operators = require('../../mock/operators.json');
 
 router.get('/operators', function (req, res) {
-    Operators.find({}, function(err, operators){
-        if(err) {
-            return res.status(500).json({message: err.message});
+    Operators.find({}, function (err, operators) {
+        if (err) {
+            return res.status(500).json({
+                message: err.message
+            });
         }
-        res.json({operators: operators});
+        res.json({
+            operators: operators
+        });
     });
 });
+
+router.post('/operators', function (req, res) {
+    Operators.create(req.body, function (err) {
+        if (err) {
+            return res.status(500).json({
+                message: err.message
+            });
+        }
+    })
+})
 
 module.exports = router;

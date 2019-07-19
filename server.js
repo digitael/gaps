@@ -15,6 +15,7 @@ app
     publicPath: config.output.publicPath
   }))
   .use('/', express.static('dist'))
+  .use(express.json())
   .use('/api', router)
   .listen(3000, function () {
     console.log('listening on port 3000:\n');

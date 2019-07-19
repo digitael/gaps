@@ -1,36 +1,39 @@
 <div layout="row" layout-padding style="background-color:rgb(46, 46, 176);color:white;">
     <h2>Add new operator</h2>
 </div>
-<div layout="row" flex="100" flex>
-    <md-list flex="50">
-        <md-list-item>
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Operator name</label>
-                <input ng-model="operator.name">
-            </md-input-container>
-        </md-list-item>
-        <md-list-item>
-            <p>Network Operator</p>
-            <md-switch class="md-primary" ng-model="operator.network"></md-switch>
-        </md-list-item>
+<div ng-controller="addOperatorCtrl">
+    <form action="" name="addOperatorForm">
+        <div layout="row" flex="100" flex>
+            <md-list flex="50">
+                <md-list-item>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Operator name</label>
+                        <input ng-model="operator.name">
+                    </md-input-container>
+                </md-list-item>
+                <md-list-item>
+                    <p>Network Operator</p>
+                    <md-switch class="md-primary" ng-model="operator.network"></md-switch>
+                </md-list-item>
 
-        <md-list-item>
-            <p>Voice Operator</p>
-            <md-switch class="md-primary" ng-model="operator.voice"></md-switch>
-        </md-list-item>
+                <md-list-item>
+                    <p>Voice Operator</p>
+                    <md-switch class="md-primary" ng-model="operator.voice"></md-switch>
+                </md-list-item>
 
-        <md-list-item>
-            <p>CATV Operator</p>
-            <md-switch class="md-primary" ng-model="operator.catv"></md-switch>
-        </md-list-item>
+                <md-list-item>
+                    <p>CATV Operator</p>
+                    <md-switch class="md-primary" ng-model="operator.catv"></md-switch>
+                </md-list-item>
 
-        <md-list-item>
-            <p>Data Operator</p>
-            <md-switch class="md-primary" ng-model="operator.data"></md-switch>
-        </md-list-item>
-    </md-list>
+                <md-list-item>
+                    <p>Data Operator</p>
+                    <md-switch class="md-primary" ng-model="operator.data"></md-switch>
+                </md-list-item>
+            </md-list>
 
+        </div>
+        <md-button class="md-raised md-primary" ng-click="newOperator(operator)">Submit</md-button>
+        <md-button class="md-raised md-primary" ng-click="resetForm()">Reset values</md-button>
+    </form>
 </div>
-<md-button class="md-raised md-primary">Submit</md-button>
-<md-button class="md-raised md-primary">Reset values</md-button>
-

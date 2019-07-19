@@ -1,8 +1,9 @@
 <div layout="row" layout-padding style="background-color:rgb(46, 46, 176);color:white;">
     <h1>Operators view</h1>
 </div>
+<div ng-controller="operatorCtrl">
 
-<div layout="row" flex="100" flex ng-controller="operatorCtrl">
+<div layout="row" flex="100" flex>
     <md-list flex style="text-align:center;">
         <md-list-item style="background-color:#f0f0f0">
             <div layout="column" flex="20" class="md-title">Operator name</div>
@@ -21,12 +22,16 @@
         </md-list-item>
         <md-divider></md-divider>
     </md-list>
+
 </div>
 
-<md-button class="md-raised md-primary" href="#/operators/add">
+<div layout="column" flex="100" flex>
+<md-button class="md-raised md-primary" ng-href="/#/operators/add">
     Add new operator
 </md-button>
 
-<md-button class="md-raised md-warn" ng-click="getOperators()">
+<md-button class="md-raised md-warn" ng-click="refresh()">
     Refresh list
 </md-button>
+</div>
+</div>

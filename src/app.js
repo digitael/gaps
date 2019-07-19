@@ -29,6 +29,22 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
             let operators = response.data;
             $scope.operators = operators.operators;
         })
+
+        $scope.refresh = function() {
+            dataService.getOperators(function (response) {
+                let operators = response.data;
+                $scope.operators = operators.operators;
+            })
+    }
+})
+    .controller('addOperatorCtrl', function($scope, $location, dataService){
+        $scope.newOperator = function(data){
+            dataService.createOperator(data);
+            $location.path('/operators');
+        }
+        $scope.resetForm = function() {
+            $scope.operator = {};
+        }
     })
     .controller('sidenavCtrl', function ($scope, $mdSidenav) {
         $scope.openLeftMenu = function () {
