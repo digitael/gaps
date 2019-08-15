@@ -8,6 +8,9 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
             .when('/operators/add', {
                 templateUrl: 'views/operators/add.html'
             })
+            .when('/operators/:id', {
+                templateUrl: 'views/operators/add.html'
+            })
             .when('/users', {
                 templateUrl: 'views/users.html'
             })
@@ -37,14 +40,21 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
             })
     }
 })
-    .controller('addOperatorCtrl', function($scope, $location, dataService){
+    .controller('addOperatorCtrl', function($scope, $route, $routeParams, $location, dataService){
+        $scope.$route = $route;
+        $scope.$routeParams = $routeParams;
+
+        if ($routeParams.id) {
+            dataService.getOperator($routeParams.id, function(response){
+                $scope.operator = response.data.operator[0];
+            });
+        }
+
         $scope.newOperator = function(data){
             dataService.createOperator(data);
             $location.path('/operators');
         }
-        $scope.resetForm = function() {
-            $scope.operator = {};
-        }
+
     })
     .controller('sidenavCtrl', function ($scope, $mdSidenav) {
         $scope.openLeftMenu = function () {

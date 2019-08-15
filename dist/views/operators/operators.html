@@ -13,7 +13,7 @@
             <div layout="column" flex="20" class="md-title">Data Operator</div>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-repeat="operator in operators">
+        <md-list-item ng-repeat="operator in operators" ng-href="/#/operators/{{operator._id}}">
             <div layout="column" flex="20"><strong>{{ operator.name }}</strong></div>
             <div layout="column" flex="20">{{ operator.network }}</div>
             <div layout="column" flex="20">{{ operator.voice }}</div>

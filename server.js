@@ -16,9 +16,10 @@ app
   }))
   .use('/', express.static('dist'))
   .use(express.json())
+  .use(express.urlencoded({ extended: true }))
   .use('/api', router)
-  .listen(3000, function () {
-    console.log('listening on port 3000:\n');
+  .listen(3100, function () {
+    console.log('listening on port 3100:\n');
   });
 
 // needs refactoring: https://github.com/jantimon/html-webpack-plugin/issues/145#issuecomment-170554832

@@ -2,7 +2,7 @@
 
 var Operators = require('./models/operators');
 
-Operators.collection.remove({});
+Operators.collection.deleteMany();
 
 var operators = [
     {

@@ -3,37 +3,37 @@
 </div>
 <div ng-controller="addOperatorCtrl">
     <form action="" name="addOperatorForm">
-        <div layout="row" flex="100" flex>
+        <div layout="row" flex="100" flex ng-form="addOperatorForm">
             <md-list flex="50">
                 <md-list-item>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Operator name</label>
-                        <input ng-model="operator.name">
+                        <input ng-model="operator.name" ng-model-options="{ updateOn: 'submit'}"> 
                     </md-input-container>
                 </md-list-item>
                 <md-list-item>
                     <p>Network Operator</p>
-                    <md-switch class="md-primary" ng-model="operator.network"></md-switch>
+                    <md-switch class="md-primary" ng-model="operator.network" ng-model-options="{ updateOn: 'submit'}"></md-switch>
                 </md-list-item>
 
                 <md-list-item>
                     <p>Voice Operator</p>
-                    <md-switch class="md-primary" ng-model="operator.voice"></md-switch>
+                    <md-switch class="md-primary" ng-model="operator.voice" ng-model-options="{ updateOn: 'submit'}"></md-switch>
                 </md-list-item>
 
                 <md-list-item>
                     <p>CATV Operator</p>
-                    <md-switch class="md-primary" ng-model="operator.catv"></md-switch>
+                    <md-switch class="md-primary" ng-model="operator.catv" ng-model-options="{ updateOn: 'submit'}"></md-switch>
                 </md-list-item>
 
                 <md-list-item>
                     <p>Data Operator</p>
-                    <md-switch class="md-primary" ng-model="operator.data"></md-switch>
+                    <md-switch class="md-primary" ng-model="operator.data" ng-model-options="{ updateOn: 'submit'}"></md-switch>
                 </md-list-item>
             </md-list>
-
         </div>
-        <md-button class="md-raised md-primary" ng-click="newOperator(operator)">Submit</md-button>
-        <md-button class="md-raised md-primary" ng-click="resetForm()">Reset values</md-button>
+        <md-button type="submit" class="md-raised md-primary" ng-click="newOperator(operator)" ng-hide="$routeParams.id">Submit</md-button>
+        <md-button class="md-raised md-primary" ng-click="updateOperator(operator)" ng-show="$routeParams.id" ng-disabled="addOperatorForm.$pristine">Update</md-button>
+        <md-button class="md-raised md-primary" ng-click="addOperatorForm.$rollbackViewValue()">Reset values</md-button>
     </form>
 </div>
