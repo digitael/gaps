@@ -40,7 +40,7 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
             })
     }
 })
-    .controller('addOperatorCtrl', function($scope, $route, $routeParams, $location, dataService){
+    .controller('addOperatorCtrl', function($scope, $route, $routeParams, $location, $mdDialog, dataService){
         $scope.$route = $route;
         $scope.$routeParams = $routeParams;
 
@@ -53,6 +53,27 @@ angular.module('CloudSight', ['ngRoute', 'ngMaterial'])
         $scope.newOperator = function(data){
             dataService.createOperator(data);
             $location.path('/operators');
+        }
+
+        $scope.updateOperator = function(data) {
+            dataService.updateOperator(data);
+            $location.path('/operators');
+        }
+
+        $scope.showConfirm = function(ev, data){
+            let confirm = $mdDialog.confirm()
+            .title(`Would you like to delete operator "${data.name}"`)
+            .textContent('Warning: This action can not be undone!')
+            .ariaLabel('')
+            .targetEvent(ev)
+            .ok(`Delete operator`)
+            .cancel('Cancel')
+
+            $mdDialog.show(confirm).then(function(){
+                dataService.deleteOperator(data._id);
+                $location.path('/operators');
+            }, function(){
+            })
         }
 
     })

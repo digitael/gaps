@@ -13,4 +13,10 @@ angular.module('CloudSight')
         this.createOperator = function (data) {
             $http.post('/api/operators', data);
         }
+        this.updateOperator = function (data) {
+            $http.put('/api/operators/' + data._id, data);
+        }
+        this.deleteOperator = function (id) {
+            $http.delete('/api/operators/' + id);
+        }
     })

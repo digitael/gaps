@@ -64,4 +64,25 @@ router.post('/operators', function (req, res) {
     })
 })
 
+router.delete('/operators/:id', function (req, res) {
+    
+    let id = req.params.id;
+    // let operator = req.body;
+    // console.log(operator, id);
+    //     if(operator && operator._id !== id){
+    //     return res.status(500).json({message: 'IDs matchen niet'});
+    // }
+
+    Operators.findOneAndDelete( id, function (err) {
+        if (err) {
+            return res.status(500).json({
+                message: err.message
+            });
+        }
+        res.json({
+            message: 'operator verwijderd'
+        });
+    });
+});
+
 module.exports = router;
